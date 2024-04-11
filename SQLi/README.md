@@ -3,6 +3,22 @@ Link: https://portswigger.net/web-security/sql-injection
 # Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/327800f1-dfea-47cf-97cf-8ee1ce312cb7)
 
+# Lab: SQL injection vulnerability allowing login bypass
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/814b2e11-249d-44b6-97a2-738d26d7390d)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/644e02a2-6d0c-4f41-ba27-2167e94fceed)
+
+# Lab: SQL injection attack, querying the database type and version on Oracle
+?category=Gifts'+UNION+SELECT+'abc','def'+FROM+dual--
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/22a99a6d-fc53-47e9-a624-74806107395f)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/765bc21b-86da-4e74-9f41-153523040530)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/65d7c205-d00e-44e4-8f0e-70c9008e1824)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a583ede3-705a-49ae-b83f-8fdb065c366d)
+
 # Lab: SQL injection with filter bypass via XML encoding
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/09162052-c311-4c38-bc36-c24c24aea93d)
 
