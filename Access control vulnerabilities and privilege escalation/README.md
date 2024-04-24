@@ -1,1 +1,1 @@
-Link: (https://portswigger.net/web-security/access-control)
+Link: https://portswigger.net/web-security/access-control
