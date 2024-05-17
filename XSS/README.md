@@ -1,1 +1,1 @@
-Link: https://portswigger.net/web-security/cross-site-scripting)
+Link: https://portswigger.net/web-security/cross-site-scripting
