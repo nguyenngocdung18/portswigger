@@ -62,3 +62,20 @@ Thêm nó vào giỏ hàng và mua chúng với giá 0$
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/12252cd2-0d7a-49a0-873c-270ce1820121)
 
 # Lab: Exploiting a mass assignment vulnerability
+Ta thêm sản phẩm "Lightweight "l33t" Leather Jacket" vào giỏ hàng và thực hiện đặt hàng bằng cách ấn vào nút "place order" thì phát hiện ra 1 api checkout
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/16012d94-f2f3-41fa-ba36-c16d25430fa1)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/d4909cde-8788-40e1-93e9-e49dc01a5d0c)
+
+Gửi nó qua Repeater và thêm ```"chosen_discount":{"percentage":0},``` vào rồi thực hiện gửi đi thì thấy khi thêm 1 thông số nữa thì không báo lỗi
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/677e07f6-b396-4d18-a81b-17d51f75ab88)
+
+Vì thế ta chuyển mức giảm giá thành 100% để có thể mua hàng miễn phí
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/e3536ed6-8e67-45d4-b4a7-e81ff01839f9)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/55c2a876-f767-4def-9a0f-b087f322de61)
+
+=))) Done!!
