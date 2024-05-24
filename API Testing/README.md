@@ -1,4 +1,21 @@
 Link: https://portswigger.net/web-security/api-testing
+
+# API Documents check
+    /api
+    /swagger/index.html
+    /openapi.json
+Ví dụ tìm thấy path là  /api/swagger/v1/users/123, có thể thử check
+
+    /api/swagger/v1
+    /api/swagger
+    /api
+Có các options như là 
++ GET - Xem.
++ PATCH - Sửa.
++ OPTIONS - Xuất thông tin các options có sẵn
++ POST - Tạo.
++ DELETE - Xóa.
+
 # Lab: Exploiting an API endpoint using documentation
 
 Đăng nhập với tài khoản mật khẩu đã cho và thực hiện update email
