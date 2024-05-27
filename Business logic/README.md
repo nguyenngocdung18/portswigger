@@ -37,3 +37,33 @@ Sau đó ta bắt lấy request khi thêm sản phẩm có id là 2 vào giỏ h
 => Done!!
 
 # Lab: Inconsistent security controls
+Thử các test sqli thường gặp với login form nhưng không thành công
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/35e89dd4-19fc-472a-9120-4d373dc1f977)
+
+## dùng ffuf
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b2e5959d-2442-480f-9151-874fbd731608)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/378b3b51-4fa9-4685-9ea1-55126e52b2a0)
+
+=> user: DontWannaCry
+
+Trong phần đăng kí 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/53d3699c-de8d-4a88-8365-524cdbe254a2)
+
+Ấn nào nút Email Client ở phía trên màn hình và dùng gmail đó để tiến hành đăng kí
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/22bb4485-80df-4166-b04b-4bf64e60a22d)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a7e2c325-c65b-46d5-b95c-751d78bb40a2)
+
+Đăng nhập và tiến hành update email
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c230b9d4-b4c6-4d8e-8116-8330f51b4bed)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8cb6e319-e019-4b34-a7b2-ae9ea8d6f763)
+
+Click vào Admin Panel và xóa user: carlos
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c9a19d2e-b184-4aeb-ba81-a8ccb8547d0c)
