@@ -99,3 +99,54 @@ Thay đổi file name thành " exploit.php%00.jpg"  %00 tương đương kí t�
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/aa6f6291-b239-4c78-bff7-e679bbb19186)
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8bc8c429-501d-42b3-bd46-858907960ec6)
+
+# Lab: Remote code execution via polyglot web shell upload
+Không thể upload được
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/5068a42b-90ce-40f4-af62-e93aeda9ca26)
+
+Tạo 1 polygon webshell với exiftool
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/6e1116e8-5dad-4911-8c39-71d4f018b66b)
+
+=> dù file có extension là .php nhưng loại file vẫn là img
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/1bb1775e-5b36-4ba9-9c03-6d337fdb4459)
+
+Nhờ vậy ta đã upload thành công
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/44b912d3-9fdb-4ae7-9cb3-ae2c324d3b02)
+
+Và ở phần Response ta tìm thấy đáp án "START SN4WOABCjmUnH1T7mSvIqLE8wYdSeM5K END"
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/561b27d9-b735-4e30-b459-6b40d209aceb)
+
+# Lab: Web shell upload via race condition
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/7047c654-b8cb-4610-a0fb-950192fb412f)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/fe00d699-19cb-4f8c-9fcf-ea757482d10b)
+
+Ta chuyển 2 requests này sang intruder. Cả 2 requests ta đều set payload như hình bên dưới
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/ced7b6a9-da2b-4b7f-ae14-bb821a37da20)
+
+thực hiện Start attack cả 2 requests
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/1f74b2c1-0d1f-48f2-849e-83f1f42a3602)
+
+sau đó ta dừng attack request GET lại và xóa "%00.jpg" trên path của nó đi .
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/98916dcb-8af1-4005-8cd1-54b4527b4764)
+
+Và thực hiện Start Attack tiếp request này
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c556853f-24b9-4bc9-ab9e-df4f666f4c5c)
+
+Và ta bắt được các requests có status là 200
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/7d0ad7fe-7925-4439-96e0-fc9381a5b582)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/9b63d231-db7e-40d8-ba49-4ebe6e16b2e5)
+
+=> Done!!
