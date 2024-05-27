@@ -67,3 +67,16 @@ Trong phần đăng kí
 Click vào Admin Panel và xóa user: carlos
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c9a19d2e-b184-4aeb-ba81-a8ccb8547d0c)
+
+# Lab: Flawed enforcement of business rules
+Nhập email vào phần sign up ở dưới cùng của trang home, tôi có thêm 1 phiếu giảm giá
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a89e40d4-a51a-4e48-9703-b69377afce7d)
+
+=))) ảo thiệt, khi nhập cùng 1 mã 2 lần liên tiếp thì nó sẽ báo đã có rồi nhưng khi dùng 2 mã luân phiên thì lại được
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/e216be52-df97-4e97-98c2-aaa70f10ee51)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/4f6062ef-6ecd-423a-aaa6-5ef6d93c0280)
+
+=> Done!!
