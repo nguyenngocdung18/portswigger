@@ -80,3 +80,54 @@ Nhập email vào phần sign up ở dưới cùng của trang home, tôi có th
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/4f6062ef-6ecd-423a-aaa6-5ef6d93c0280)
 
 => Done!!
+
+# Lab: Low-level logic flaw
+Ta vẫn có thể thay đổi giá trị của thông số quantity
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a17558ef-0d33-47c2-a7ae-b946784b6c3e)
+
+Gửi request sang Intruder thực hiện attack và phát hiện ra sau càng tăng quantity lên thì giá cả sẽ tới 1 mốc nhất định rồi nhảy về số âm và tiếp tục tăng lên.
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/5488f84a-9b99-4b99-bde2-443125dea120)
+
+Vì vậy ta điều chỉnh quantity thành 99 (99 là max) và payloads như bên dưới
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/ff25002a-beab-434f-a0bb-23ce5d5d71d5)
+
+tiếp đó bên tab resources pool
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a08b4f78-7791-4e37-bbc4-afbd4d01f33f)
+
+Tiếp theo ấn attack, Sau đó thêm 1 sản phẩm khác và tăng số lượng lên sao cho nó trên 0 và dưới 100
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/e6bbdae5-49a2-4445-96f9-68bf356b670f)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/cfb22e5f-8700-4333-9b6d-fdf797d26eb0)
+
+=> Done!!
+
+# Lab: Inconsistent handling of exceptional input
+
+Dùng email client và tạo account như lab trước đó, lưu ý để email dài 1 chút
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/9f5954ae-d0ee-484f-bbab-2813353832d5)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/4c6a10b5-e519-4894-a585-f9c60e39d18f)
+
+Sau khi tạo account thành công thì không thấy Admin Panel và xet thấy phần email chỉ hiển thị 255 kí tự và ở mục đăng kí có dòng "If you work for DontWannaCry, please use your @dontwannacry.com email address". Có thể là phải email công ty mới được.
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/3fdec1b8-6617-4c38-88be-f8a2ad2beccd)
+
+Vì vậy ta đi đăng kí tài khoản mới. Nhớ là chữ "m" trong "@dontwannacry.com" đứng ở ký tự 255. Ta đếm "@dontwannacry.com" chứa 17 kí tự , vậy cần 238 kí tự trước nó nũa. Có thể dùng 1 vòng lặp for để in ra cho chính xác
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/1157caa6-f069-4d08-b432-4c36f74df428)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c713290b-4127-4457-9835-80831377256e)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2a8b78b4-5b6c-4f63-8edc-a207f13133e0)
+
+Ta đã thấy tab Admin Panel
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/34e552c8-2be9-4bf1-8eac-d912beec6c20)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8f57d037-7e44-43b6-aba6-8e7e9eb57ef5)
