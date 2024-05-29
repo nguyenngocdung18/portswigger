@@ -131,3 +131,84 @@ Ta đã thấy tab Admin Panel
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/34e552c8-2be9-4bf1-8eac-d912beec6c20)
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8f57d037-7e44-43b6-aba6-8e7e9eb57ef5)
+
+# Lab: Weak isolation on dual-use endpoint
+Trong lab này ta thấy có phần đổi mật khẩu
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/e9ab9858-3c99-42ff-8cad-a5c5e11b6bf1)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/278f351d-0044-454a-92ef-65df99720839)
+
+Khi ta xóa bỏ thông số currentpassword thì việc đổi mật khẩu vẫn thành công
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a233b624-748c-429f-849a-783974bad713)
+
+Vì vậy ta đổi username thành administrator
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/dd27cacb-c975-4e6d-8a4d-6ce3f92032cb)
+
+Đổi mật khẩu thành công
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/3b5861c9-2801-41fe-8733-7b01289b2c2f)
+
+Đăng nhập thành công administrator
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c645f72d-8b2c-4e29-9c3d-3b5ae47bca55)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a344dfa1-68b8-468f-a95e-60018c610d0c)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/16cc2a52-bbdb-435e-aeb5-eccf33698152)
+
+# Lab: Insufficient workflow validation
+Khi Mua 1 món hàng thành công
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/f628dc62-3d23-4a6e-ac8a-20866a411213)
+
+Ta kiểm tra thấy nó hiện vị trí đích
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/5d1b4f48-6136-4767-a98f-cfcba9e433d7)
+
+Bây giờ tiến hành đặt 1 cái Lightweight "l33t" Leather Jacket
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/fcbab3d9-e507-41d4-bbfa-e5fb553476f5)
+
+Thực hiện gửi request này
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/0df9ebe2-6547-4689-b82f-77cb25860f5a)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/74dbdac7-8b84-422c-a7bb-bbaea61d061a)
+
+# Lab: Authentication bypass via flawed state machine
+Đăng nhập vào ta thấy 1 chức năng 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a8a1dee2-ee44-446f-8aac-f30519027318)
+
+Nhưng không thấy có gì khai thác được, ta tiến hành FUZZ 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/762f3a54-b81e-4fd4-886e-2821feb92671)
+
+Mở Intercept và tiến hành bắt request
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/d204dc2c-bbb7-4b43-9e3f-964a04888231)
+
+click vào forward để gửi đi
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2f7a9302-0774-4c90-849d-4c342828db5f)
+
+Drop request này, ở browser ta sẽ thấy
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/dd501015-1234-4eb0-a4fd-f0c4b9ad7dc6)
+
+Ta tiến hành về lại trang chủ, Intercept sẽ bắt được request này
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/05460a86-b039-48da-9f17-5c946e7c198d)
+
+Ấn forward và tada =))) Chúng ta đã bypass thành công và có tab Admin Panel
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/67cb00fd-f266-4579-a7fe-a354d17d484d)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/36b005ab-4637-4718-bf42-98f68bbb4956)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/ca3d16f2-7a9a-4132-8d62-d13410b4aa2f)
+
+
