@@ -86,3 +86,5 @@ view exploit và thấy email đã được thay đổi
 Gửi nó cho victim
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/195c870f-8116-4374-a8a1-dd5f7af6789e)
+
+# Lab: CSRF where token is tied to non-session cookie
