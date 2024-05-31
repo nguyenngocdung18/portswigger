@@ -13,7 +13,7 @@ Go to exploit server
 
 Ta thấy email đã được thay đổi
 
-Giờ ta quay lại , ấn store để lưu và "Deliver exploit to victim" để hoàn thành bài lab.
+Giờ ta quay lại , ấn store để lưu và "Deliver exploit to victim" để hoàn thành bài lab. ( nhớ đổi lại email, không thì nó trùng với email được set khi "view exploit" sẽ không hoàn thành được)
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/caa1d239-fab1-4888-b8e6-f2aec53728f0)
 
@@ -88,3 +88,40 @@ Gửi nó cho victim
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/195c870f-8116-4374-a8a1-dd5f7af6789e)
 
 # Lab: CSRF where token is tied to non-session cookie
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8079616e-6d16-41c5-b7b9-2b83c014193e)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/1124f64e-8e92-4e92-ac79-b9e7d86bf979)
+
+Ta phát hiện ra csrf không ràng buộc với session cookie. khi ta dùng tính năng tìm kiếm thì ta thấy phần search term được hiển thị luôn trên setCookie và không được bảo vệ csrf nên ta có thể inject vào như bên dưới
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2e9a31c4-bf81-4127-bd98-5217d54f02fd)
+
+View exploit => thành công
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/9002d2cb-e097-4d5e-8be9-9a61ff92ff86)
+
+Gửi cho victim => done!
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8a7f2931-e00a-4eab-b324-5dd27e96920c)
+
+# Lab: CSRF where token is duplicated in cookie
+Ta thấy csrf token trùng với csrf trong cookie
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/ec126797-0412-42ba-9b16-45c901de83b8)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/ae20e2f0-2ac2-459a-9a50-deb0494c6944)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/7ca09108-388e-4605-809d-54500f42f748)
+
+Go to exploit server
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/afcd2cf1-2722-479c-b127-a8b074fb72e4)
+
+View exploit => thành công
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/bdc86b0f-5704-4950-b11f-47bbacc898bd)
+
+Done !!
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/25a363e9-f292-4bb1-bb79-dfd13355a2d2)
+
+nếu mà view exploit đã đổi mail thành công nhưng khi gửi cho victim lại không hoàn thành lab thì có thể thử theo hình dưới
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/f763710f-9a17-45d0-a719-ddb07018dd96)
