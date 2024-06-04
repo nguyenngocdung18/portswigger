@@ -61,3 +61,68 @@ Thêm ```"roleid":2``` vào JSON và boom!!! =)) Ta đã đặt được roleid=
 =))) Oke!
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/0d4d0b9c-84cb-451d-bd56-edadf6dfe6c8)
+
+# Lab: User ID controlled by request parameter, with unpredictable user IDs 
+Tìm kiếm quanh web thì tôi thấy carlos có đăng 1 bài viết
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/69e6120e-882a-4062-8904-9f6903e26666)
+
+Trong response có lộ 1 đường dẫn nhạy cảm, khả năng cao là GUID của carlos
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/142d7228-f59d-4178-a828-a78ee8d7421b)
+
+Về lại My account và thay đổi id
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/7ade65b8-b245-44e6-8017-3ac4b6689589)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/434f1868-d1c7-4852-8cc7-1befc26d83ce)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/74f6fcff-d558-4ad2-b6f7-62a58436cb70)
+
+# Lab: User ID controlled by request parameter with data leakage in redirect 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/3331e83e-2def-4113-8f44-8672a52e7989)
+
+Khi ta thay đổi thông số id thành carlos thì web điều hướng về trang login nhưng trước đó có vẻ như nó vẫn điều hướng tới id=carlos trước nên ta có thể xem được APIkey.
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/fb671084-e6fa-446d-b3be-2ac132401b67)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/df6cd4fb-a990-4417-886a-0faad397fdf3)
+
+# Lab: User ID controlled by request parameter with password disclosure
+
+Khi ta đổi id từ wiener thành carlos 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a1a002da-523b-48e0-8701-904e783fc62c)
+
+Ở phần Response ta có thể lấy được mật khẩu đã bị ẩn đi.
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/767ad762-566d-4f3e-8326-2a257a9c932c)
+
+Làm tương tự với id=administrator
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/16888f8f-0a13-41eb-9a7b-f007724b514d)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/68020cd6-dc24-46c6-b1d8-2aa7a64776b3)
+
+Sử dụng mật khẩu để đăng nhập 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/90193382-2578-4f47-a90e-a09a4c543916)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/15bb58b1-1b50-407e-8998-667b8185d643)
+
+# Lab: Insecure direct object references
+
+Khi ta gửi tin nhắn và ấn vào view transcript thì nó sẽ tự động tải 1 tệp với tên là các số tăng dần. Nhưng vấn đề là nó lại bắt đầu từ số 2 mà không phải 1
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/814d58ef-d489-4582-addf-3ef7bd41a38b)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/17c55584-63e2-4aa3-bf95-daa19c424c25)
+
+Sửa thành 1.txt
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/935184aa-3afa-49e9-8afe-929fc803d1d7)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8743d117-0a01-4f07-b67c-ea697df958fc)
+
+=> Done!!!
