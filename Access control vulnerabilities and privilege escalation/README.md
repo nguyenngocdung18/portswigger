@@ -126,3 +126,82 @@ Sửa thành 1.txt
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8743d117-0a01-4f07-b67c-ea697df958fc)
 
 => Done!!!
+
+# Lab: URL-based access control can be circumvented
+Truy cập tới /admin thì hiện thông báo "Access denied"
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/7e114952-9531-44e1-946d-a66749d3f29a)
+
+Sửa /admin thành / trong URL và thêm "X-Original-Url: /invalid" => thông báo trở thành "Not found". Tức là nó đã thực hiện truy vấn rồi nhưng không tìm thấy 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b98287f1-1930-4955-bb93-d6203f56845c)
+
+Chuyển /invalid thành /admin => truy cập thành công Admin Panel
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/f42889f8-8315-4ea7-8c0a-afd5146859d9)
+
+Ta tiến hành bắt request lại và làm như trên
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/9a028c4b-f36c-4c21-806e-658d5a3d11c4)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/9bb12622-512d-4e89-a12c-8067fb795a7d)
+
+Click Forward
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/6cc21268-7d2d-49c5-a364-11e6ff404b77)
+
+Xóa người dùng carlos
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8cdc8614-2a55-405b-bc2c-f3cbc17e645f)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/405fb445-289e-46c4-acf2-38e1e45a0a37)
+
+Chọn Forward để gửi đi và xong =))
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2de41ea7-3f64-4a11-908a-f62087bae7ab)
+
+# Lab: Multi-step process with no access control on one step 
+Đăng nhập vào tài khoản admin và nâng quyền carlos
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/0288330d-e681-474f-a8fd-1a80fa538b6e)
+
+Request này là xác nhận lại 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/426671b6-d423-483c-9f69-8dfe493dce49)
+
+Ta đăng nhập vào user wiener 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b5f58803-0bfa-4e30-ac5a-df2e6369f649)
+
+Sửa thành tên và cookie của wiener và bấm send
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/ffd18145-f656-4e7e-8386-8bfe46f737de)
+
+Sau đó tiếp tục làm tương tự với request xác thực
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/21c5a2fc-0963-4144-949e-b6a51dfc3a7c)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/1a2e5162-f101-4884-ae92-768867b00d0d)
+
+=> Done!!
+
+# Lab: Referer-based access control 
+User wiener không có quyền admin, ta thấy referer trỏ tới /login
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/0a9f6f73-a1c0-4bf2-97f2-5aa291885661)
+
+Truy cập vào account của admin và thực hiện nâng quyền cho carlos
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/30e273d4-d65c-4bb0-900f-ed65b6fc9c4c)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/d4d11654-5550-4a9d-aeb9-26737ec40024)
+
+=> Ta bắt được 1 request và quan sát referer đã từ /login thành /admin
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/eff58b90-172f-41cd-9458-a21581a7831a)
+
+Thay dổi tên và session cookie => Done!!
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/7d17738d-1e69-4c21-95be-40a41e74cf8b)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b0bc1a85-4b69-4cb5-b3de-9453111f65d9)
