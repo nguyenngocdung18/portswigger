@@ -24,7 +24,6 @@ Link: https://portswigger.net/web-security/sql-injection
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/5464fdb9-a588-400e-9742-ca1a01b263c7)
 
-### Bypass WAF
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/d934ee16-111d-4431-9891-82a0da03c305)
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/124552eb-078b-4a9a-9b59-200f337aba88)
