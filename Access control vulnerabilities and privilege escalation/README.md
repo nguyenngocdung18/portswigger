@@ -159,7 +159,32 @@ Xóa người dùng carlos
 Chọn Forward để gửi đi và xong =))
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2de41ea7-3f64-4a11-908a-f62087bae7ab)
+ 
+# Lab: Method-based access control can be circumvented
+Đăng nhập vào tài khoản admin và nâng quyền cho user carlos
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/347a33bf-91e0-4f5f-b20b-42df6b27e937)
+
+Đăng nhập vào user wiener và copy session cookie
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/520e4ec6-4e8b-4f49-82f8-aa42e915a774)
+
+Thay đổi tên và session cookie thành của user wiener
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/0913b5c5-bffc-4237-b914-20d92b923864)
+
+Thay đổi POST -> POSTX 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/f2c54cbe-05ad-432f-98a5-07bbfeb340d2)
+
+=> ứng dụng không xử lý đúng các phương thức không chuẩn
+
+Dùng chức năng "Change request method" để đổi thành method GET
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c2ae117e-f670-44bc-858e-358e0822e31c)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/fb97368e-4f42-4c5f-912d-2937ee0a2eb9)
+
+=> Done!!
 # Lab: Multi-step process with no access control on one step 
 Đăng nhập vào tài khoản admin và nâng quyền carlos
 
