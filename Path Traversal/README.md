@@ -41,3 +41,5 @@ Vào tab Decoder, thử encode URl ```../../../``` 1 lần thì không được,
 Sử dụng kí tự %00 như một kí tự NULL. Máy chủ web có thể hiểu phần tên tệp là passwd và loại tệp là png. Khi gặp %00, máy chủ có thể kết thúc quá trình giải mã, và bất kỳ ký tự nào sau đó sẽ bị bỏ qua hoặc không được xem xét
 
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b3b5761d-fba5-4b53-9081-16cf8560b2e7)
+
+
