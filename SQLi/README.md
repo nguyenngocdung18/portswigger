@@ -129,6 +129,81 @@ Sửa text thành PwGWsK để hoàn thành lab
 
 # Lab: Blind SQL injection with conditional responses
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/00c10237-f48c-4dd6-ab1c-7e42f5e199b8)
+
+Thay đổi TrackId
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b5b06029-3c91-4fe1-9df0-d536af6bd128)
+
+Ta thấy xuất hiện thông báo "Welcome back!"
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2ce389c2-1453-4612-b3b4-688ca4f42598)
+
+Khi ta sửa lại thành "AND '1' =2" thì thông báo "Welcome back!" đã mất
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/930dbf40-420b-408d-8fa5-fd429cd65cc9)
+
+Từ đây ta có thể thấy lỗi SQl mù sẽ hiển thị thông báo "Welcome back!" nếu truy vấn là đúng còn không hiển thị gì nếu truy vấn sai
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/3fda6da3-2cc4-49e5-bb1d-6604b5e0c6a4)
+
+=> tồn tại bảng users
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2d34abc4-f0e8-41ef-a84d-e676399de3f2)
+
+=> tồn tại user tên là administrator
+
+Tiếp theo sử dụng ```' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>3)='a``` để check độ dài của mật khẩu và sau nhiều lần thử thì mật khẩu có độ dài là 20
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b759587e-9b46-4a74-85c8-482b91566218)
+
+Sau đó tiến hành thử các kí tự a-z và 0-9 với Burp Intruder
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/3b941668-aaf3-44cf-9586-583d87ac0f4e)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/f3619f80-45af-41fb-9e0e-11555b806356)
+
+Vào setting và chỉnh grep-match thành "Welcome back!"
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2a4fef27-e3f6-4fb0-a067-5946b1356305)
+
+Start attack!! 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/79fc1e33-3399-4180-a456-8eb74f70d7e7)
+
+=> ký tự đầu tiên là 'n'
+
+Tiếp tục với kí tự thứ 2 - "SUBSTRING(password,2,1)"
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c6d61fbf-02c9-4075-85b6-d827e6c7f0e0)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/e39a9a98-4e1e-4fb0-a2c9-fd95718928b4)
+
+=> ký tự thứ 2 là 'q' . Làm tương tự tiếp tục ta sẽ được chuỗi mật khẩu của administrator là nqmztubr0kxlnymny3qy
+
+=)))))))) Hơi nông dân nhỉ! Hoặc ta có thể dùng Attack type: Cluster bomb
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/6d4c4263-b713-494d-a9cb-5dce802f4923)
+
+Chỉnh "Payload set" 1 và 2
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c255dc90-31ef-4278-8d76-02e473e74e11)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/007eea7a-1390-4d92-8ee6-7603ae554031)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/0c045547-d32d-47d1-af23-267213b44f65)
+
+=> cách này thì tool nó chạy 1 lượt cho luôn nhưng mà chạy hơi lâu . chắc do máy yếu =))
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/5ff236ad-2b8a-432f-ada6-0c107803e549)
+
+# Lab: Blind SQL injection with conditional errors
+
+
+
+
+
+
 
 
 
