@@ -8,6 +8,6 @@
 ## Broken Access Control (BAC)
 ## SQLi
 ## XSS
-- Refected XSS
+- Refected XSS (https://portswigger.net/web-security/cross-site-scripting/reflected)
 - Stored XSS (https://portswigger.net/web-security/cross-site-scripting/stored)
-- DOM XSS
+- DOM XSS (https://portswigger.net/web-security/cross-site-scripting/dom-based)
