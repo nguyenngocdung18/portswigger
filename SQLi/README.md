@@ -198,23 +198,81 @@ Chỉnh "Payload set" 1 và 2
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/5ff236ad-2b8a-432f-ada6-0c107803e549)
 
 # Lab: Blind SQL injection with conditional errors
+Khi ta thêm 1 dấu ' vào TrackingId thì thấy thông báo lỗi
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/a1853497-68d7-4809-b995-b91d96309360)
 
+Khi thêm 2 dấu ' thì thông báo lỗi biến mất
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/8cf6ce7a-39eb-46d3-952b-c3f8c6a4d82f)
 
+Khi ta chèn câu truy vấn  ``` '||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'``` thì có thông báo lỗi 
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/e5856d9f-0693-4bac-aa48-49c1d4b3c5b2)
 
+Nhưng khi sửa thành ```'||(SELECT CASE WHEN (1=2) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||'``` thì thông báo lỗi biến mất => vậy nghĩa là nếu điều kiện của câu truy vấn là false thì sẽ không có thông báo gì và khi điều kiện của câu truy vấn là true sẽ báo lỗi "Internal Server Error". Dựa vào đây ta có thể tiến thành khai thác lỗi blind sqli
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/00f1542e-1bad-469e-b9c4-65ca23f62499)
 
+=> Khi tôi chèn truy vấn ``` '||(SELECT CASE WHEN (username='administrator') THEN TO_CHAR(1/0) ELSE '' END FROM users)||'``` thì bị báo lỗi => có tồn tại username là administrator trong bảng users
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/59f8e2a6-17d4-4ed6-a9b4-1ff750a96736)
 
+Tiếp tục chèn ```'||(SELECT CASE WHEN LENGTH(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'``` để kiểm tra độ dài mật khẩu => Mật khẩu có độ dài là 20 ( có thể dùng Intruder của Burp Suite )
 
+Tiếp đó ta dùng Intruder để check mật khẩu tương tự với lab trước đó (Set payload tương tự) 
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/39f59689-2e29-4527-a310-16cf3d583122)
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/457c06e1-40fd-467d-95c4-1103a1a81a1a)
 
+=> administrator:vg6i94k6u7igary2sqwb
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/3e54f65e-0edd-4e78-b071-b0f2ec645404)
 
+# Lab: Visible error-based SQL injection
 
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/2f031811-3e60-46b1-b4d4-4fdf875396fd)
+
+Khi thêm 1 dấu ' vào TrackingId ta thấy màn hình báo lỗi
+
+Sử dụng Burp Suite bắt request đó và thêm kí tự -- vào thì thấy hết lỗi
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/86ad5997-4a56-478d-94e2-d7d0751d84b7)
+
+Sau AND phải là kiểu boolean không phải int
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/e20db578-0c05-4d92-8850-dcbec4ded1d0)
+
+Thêm "1=CAST..." vào thì đã không còn bị báo lỗi nữa
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/1441708c-896a-466b-b609-c73fb155e109)
+
+Lần này câu truy vấn không được hiển thị đầy đủ. có vẻ như có 1 giới hạn kí tự nào đó
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/b06298ec-a287-48e9-b4b5-b2cc689a6198)
+
+Xóa đi giá trị của TrackingId thì bị báo lỗi có nhiều hơn 1 hàng 
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/c0b85e55-51d0-403c-8126-f8d7e994e986)
+
+Thêm LIMIT 1 thì thấy thông báo user administrator không thể chuyển thành kiểu int
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/52711ea5-4649-42e7-86e5-ba5487ae0857)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/965b6851-c11e-490b-8960-f7959b9a1a2b)
+
+=> administrator:9b6r9sltacyu82v8me03
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/fd2d3628-3e55-4678-ae61-48f5312bbab5)
+
+# Lab: Blind SQL injection with time delays
+Thêm dấu ' vào TrackingId nhưng không báo lỗi gì
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/acb180e9-41d5-4c65-9b22-ec4236563749)
+
+![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/fbcee8e3-c74a-428e-9554-1d1b7da7e9a5)
+
+=> Done!
 
 # Lab: SQL injection with filter bypass via XML encoding
 ![image](https://github.com/nguyenngocdung18/portswigger/assets/134156226/09162052-c311-4c38-bc36-c24c24aea93d)
